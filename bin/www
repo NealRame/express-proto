@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var debug = require('debug')('ex2:server');
+var http = require('http');
+
+require('core').instance()
+    .then(function(app) {
+        var config = app.get('config');
+        app.listen(
+            config.server.port,
+            config.server.host,
+            function() {
+                debug(
+                    'Express server listening on ' + config.server.address + ':' + config.server.port
+                );
+            }
+        );
+    })
+    .catch(function(err) {
+        console.error(err.message);
+        console.error(err.stack ? err.stack : '');
+        process.exit(1);
+    });
