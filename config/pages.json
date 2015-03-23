@@ -1,0 +1,10 @@
+[
+    {
+        "name": "home",
+        "menu": {
+            "entry": "home",
+            "type": "top-bar"
+        },
+        "route": "/"
+    }
+]
