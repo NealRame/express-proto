@@ -26,8 +26,9 @@ exports.instance = function() {
         app.set('config', config);
 
         // view engine setup
-        app.set('views', path.join(__dirname, 'views'));
         app.set('view engine', 'jade');
+        app.set('views', path.join(__dirname, 'views'));
+        app.locals.basedir = app.get('views');
 
         // uncomment after placing your favicon in /public
         //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -38,7 +39,12 @@ exports.instance = function() {
 
         app.use(express.static(path.join(__dirname, '..', '..', 'public')));
 
-        // app.use('/', require('core/routes'));
+        _.forEach(config.pages, function(page_config) {
+            var page = require(path.join('pages', page_config.name));
+
+            app.get(page_config.route, page.get);
+            
+        });
 
         // catch 404 and forward to error handler
         app.use(function(req, res, next) {
