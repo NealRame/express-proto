@@ -3,12 +3,9 @@
 // - author: Neal.Rame. <contact@nealrame.com>
 
 var _ = require('underscore');
-var Achievement = require('models/achievement');
-var express = require('express');
 var path = require('path');
 
-
-function get(req, res, next) {
+function get(req, res) {
     res.render(path.join(__dirname, '/views/home.jade'), {title: 'land page'});
 }
 
