@@ -6,7 +6,7 @@ var _ = require('underscore');
 var path = require('path');
 
 function get(req, res) {
-    res.render(path.join(__dirname, '/views/home.jade'), {title: 'land page'});
+    res.render(path.join(__dirname, '/views/home.jade'), {title: 'Land page'});
 }
 
 module.exports = {
