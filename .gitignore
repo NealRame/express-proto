@@ -30,3 +30,4 @@ node_modules
 npm-debug.log
 app/core/client/sass/libs
 app/core/client/js/libs
+public/css
