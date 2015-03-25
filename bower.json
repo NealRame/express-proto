@@ -1,0 +1,42 @@
+{
+  "name": "express-proto",
+  "version": "0.0.0",
+  "homepage": "https://github.com/NealRame/express-proto",
+  "authors": [
+    "NealRame <contact@nealrame.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1"
+  },
+  "exportsOverride": {
+   "fastclick": {
+     "app/core/client/js/libs": "lib/fastclick.js"
+   },
+   "foundation": {
+     "app/core/client/sass/libs/foundation": "scss/*.scss",
+     "app/core/client/sass/libs/foundation/foundation": "scss/foundation/*.scss",
+     "app/core/client/sass/libs/foundation/foundation/components": "scss/foundation/components/*.scss",
+     "app/core/client/js/libs": "js/foundation.js"
+   },
+   "jquery": {
+     "app/core/client/js/libs": "dist/jquery.js"
+   },
+   "jquery.cookie": {
+     "app/core/client/js/libs": "jquery.cookie.js"
+   },
+   "jquery-placeholder": {
+     "app/core/client/js/libs": "jquery.placeholder.js"
+   },
+   "modernizr": {
+     "app/core/client/js/libs": "modernizr.js"
+   }
+ }
+}
