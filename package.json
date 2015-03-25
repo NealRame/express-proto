@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_PATH=\"$PWD/app\" node ./bin/www"
+    "start": "DEBUG=\"ex2:*\" NODE_PATH=\"$PWD/app\" node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.12.0",
