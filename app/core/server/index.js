@@ -39,12 +39,22 @@ exports.instance = function() {
 
         app.use(express.static(path.join(__dirname, '..', '..', '..', 'public')));
 
+        app.locals.menu = {
+            navbar: [],
+            footer: []
+        };
+
         _.forEach(config.pages, function(page_config) {
             var page = require(path.join('pages', page_config.name));
 
             app.get(page_config.route, page.get);
-
+            app.locals.menu[page_config.menu.type].push({
+                name: page_config.menu.entry,
+                slug: page_config.route
+            });
         });
+
+        console.log(app.locals.menu);
 
         // catch 404 and forward to error handler
         app.use(function(req, res, next) {
