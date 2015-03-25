@@ -14,7 +14,7 @@ exports.instance = function() {
         return Promise.resolve(app);
     }
 
-    var config = require('core/config');
+    var config = require('core/server/config');
 
     return (new Promise(function(resolve, reject) {
         mongoose.connect(config.database.fullURI).connection
@@ -37,13 +37,13 @@ exports.instance = function() {
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(cookieParser());
 
-        app.use(express.static(path.join(__dirname, '..', '..', 'public')));
+        app.use(express.static(path.join(__dirname, '..', '..', '..', 'public')));
 
         _.forEach(config.pages, function(page_config) {
             var page = require(path.join('pages', page_config.name));
 
             app.get(page_config.route, page.get);
-            
+
         });
 
         // catch 404 and forward to error handler

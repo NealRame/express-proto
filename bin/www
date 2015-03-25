@@ -3,7 +3,7 @@
 var debug = require('debug')('ex2:server');
 var http = require('http');
 
-require('core').instance()
+require('core/server').instance()
     .then(function(app) {
         var config = app.get('config');
         app.listen(
