@@ -1,5 +1,15 @@
-aside#menu
-    ul
-        li home
-        li foo
-        li bar
+//- navbar.jade
+//- ===========
+//- - author: Neal.Rame. <contact@nealrame.com>
+//- -   date: Wed Mar 24 13:50:43 2015
+div.sticky.menu
+    nav.top-bar(data-topbar)
+        ul.title-area
+            li.name.hide-for-medium-up
+                h1: a(href="#") Express Proto
+            li.toggle-topbar.menu-icon
+                a(href="#"): span
+        section.top-bar-section
+            ul.right
+                each entry in menu.navbar
+                    li: a(href=entry.slug) #{entry.name}
