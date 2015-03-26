@@ -7,6 +7,22 @@
                 "type": "navbar"
             },
             "route": "/"
+        },
+        {
+            "name": "foo",
+            "menu": {
+                "entry": "foo",
+                "type": "navbar"
+            },
+            "route": "/foo"
+        },
+        {
+            "name": "bar",
+            "menu": {
+                "entry": "bar",
+                "type": "navbar"
+            },
+            "route": "/bar"
         }
     ]
 }
