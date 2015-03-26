@@ -39,6 +39,11 @@ exports.instance = function() {
 
         app.use(express.static(path.join(__dirname, '..', '..', '..', 'public')));
 
+        app.use(function(req, res, next) {
+            res.locals.path = req.path;
+            next();
+        });
+
         app.locals.menu = {
             navbar: [],
             footer: []
@@ -53,8 +58,6 @@ exports.instance = function() {
                 slug: page_config.route
             });
         });
-
-        console.log(app.locals.menu);
 
         // catch 404 and forward to error handler
         app.use(function(req, res, next) {
