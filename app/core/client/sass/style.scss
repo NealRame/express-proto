@@ -1,2 +1,10 @@
 @import "settings";
 @import "foundation/foundation";
+
+footer {
+    background-color: #333;
+    color: white;
+    p {
+        text-align: center;
+    }
+}
