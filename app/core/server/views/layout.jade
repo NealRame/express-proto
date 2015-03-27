@@ -7,3 +7,7 @@ html
         include /navbar
         block content
         include /footer
+        script.
+            require(['/js/common.js'], function(common) {
+                require(['stickyfooter/main']);
+            });
