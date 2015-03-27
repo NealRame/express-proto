@@ -105,6 +105,10 @@ module.exports = function(grunt) {
                         {
                             name: 'stickyfooter/main',
                             exclude: ['common']
+                        },
+                        {
+                            name: 'pages/home/main',
+                            exclude: ['common']
                         }
                     ],
                     logLevel: 4
