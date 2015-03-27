@@ -75,6 +75,43 @@ module.exports = function(grunt) {
             },
         },
 
+        requirejs: {
+            compile: {
+                options: {
+                    appDir: '<%= client_app_dir %>',
+                    mainConfigFile: '<%= js_srcs_dir %>/common.js',
+                    baseUrl: './js',
+                    dir: '<%= assets_dir %>',
+
+                    keepBuildDir: true,
+                    removeCombined: isProd(),
+
+                    optimize: 'uglify2',
+                    generateSourceMaps: isDev(),
+                    preserveLicenseComments: isProd(),
+                    useSourceUrl: isDev(),
+
+                    modules: [
+                        {
+                            name: 'common',
+                            include: [
+                                'backbone',
+                                'foundation',
+                                'jquery',
+                                'marionette',
+                                'underscore'
+                            ]
+                        },
+                        {
+                            name: 'stickyfooter/main',
+                            exclude: ['common']
+                        }
+                    ],
+                    logLevel: 4
+                }
+            }
+        },
+
         watch: {
             sass: {
                 files: [
@@ -95,6 +132,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-sass');
