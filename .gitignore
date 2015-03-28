@@ -28,8 +28,8 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
-app/core/client/sass/libs
-app/core/client/js/libs
+app/client/sass/libs
+app/client/js/libs
 public/css
 public/js
 public/sass
