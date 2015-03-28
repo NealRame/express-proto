@@ -1,0 +1,29 @@
+@import "../../settings";
+
+body > .splash {
+    display: none;
+}
+
+@media #{$medium-up} {
+    body > .splash {
+        display: block;
+        background-color: $splash-background-color;
+        // position: fixed;
+        // height: $splash-height;
+        width: 100%;
+        z-index: 1;
+        .logo {
+            color: white;
+            font-size: 64pt;
+            font-weight: 100;
+            text-shadow: 1px 0px 6px white;
+            text-align: center;
+            @media #{$large-up} {
+                font-size: 64pt;
+            }
+        }
+        // & + section {
+        //     margin-top: $splash-height;
+        // }
+    }
+}
