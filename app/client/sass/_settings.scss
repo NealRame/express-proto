@@ -1,7 +1,5 @@
-@import "foundation/foundation/functions";
+@import "foundation/settings";
+@import "foundation/components/global";
 
-$include-html-classes: true;
-$include-html-global-classes: $include-html-classes;
-
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+$splash-background-color: #333;
+$splash-height: 64px;

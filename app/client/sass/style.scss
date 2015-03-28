@@ -1,5 +1,8 @@
 @import "settings";
-@import "foundation/foundation";
+
+@import "foundation/components/grid";
+@import "foundation/components/top-bar";
+@import "foundation/components/type";
 
 footer {
     background-color: #333;

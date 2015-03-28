@@ -61,14 +61,14 @@ module.exports = function(grunt) {
         sass: {
             compile: {
                 options: {
-                    includePaths: ['<%= sass_libs_dir %>'],
+                    includePaths: ['<%= sass_libs_dir %>/foundation'],
                     outputStyle: isDev() ? 'nested' : 'compressed',
                     sourceMap: isDev()
                 },
                 files: [{
                     expand: true,
                     cwd: '<%= sass_srcs_dir %>',
-                    src: ['style.scss'],
+                    src: ['style.scss', 'pages/home/style.scss'],
                     dest: '<%= sass_build_dir %>',
                     ext: '.css'
                 }]
