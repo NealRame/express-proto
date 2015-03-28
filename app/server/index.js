@@ -65,7 +65,7 @@ exports.instance = function() {
                 ? path.join('pages', page_name, page_app)
                 : false;
             app.locals.stylesheets[page_name] = page_css
-                ? path.join('/css', page_name, page_css)
+                ? path.join('/css/pages', page_name, page_css)
                 : false;
         });
 
