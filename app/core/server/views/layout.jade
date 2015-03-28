@@ -3,6 +3,9 @@ html
     head
         title= title
         link(rel='stylesheet', href='/css/style.css')
+        if stylesheets[page]
+            link(rel='stylesheet', href=stylesheets[page])
+        script(src='/js/libs/require.js')
     body
         include /navbar
         block content

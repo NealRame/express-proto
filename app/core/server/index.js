@@ -39,24 +39,19 @@ exports.instance = function() {
 
         app.use(express.static(path.join(__dirname, '..', '..', '..', 'public')));
 
-        app.use(function(req, res, next) {
-            res.locals.path = req.path;
-            next();
-        });
-
         app.locals.applications = {};
+        app.locals.stylesheets = {};
         app.locals.menu = {
             navbar: [],
             footer: []
         };
 
         _.forEach(config.pages, function(page_config) {
-            var page = require(path.join('pages', page_config.name));
-
-            app.get(page_config.route, page.get);
             var page_name = page_config.name;
             var page_app = page_config.app;
+            var page_css = page_config.css;
             var page = require(path.join('pages', page_name));
+
             app.get(page_config.route, function(req, res, next) {
                 res.locals.page = page_name;
                 page.get(req, res, next);
@@ -68,6 +63,9 @@ exports.instance = function() {
             });
             app.locals.applications[page_name] = page_app
                 ? path.join('pages', page_name, page_app)
+                : false;
+            app.locals.stylesheets[page_name]
+                ? path.join('/css', page_name, page_css)
                 : false;
         });
 
