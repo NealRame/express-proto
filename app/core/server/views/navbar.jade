@@ -12,5 +12,5 @@ div.sticky.menu
         section.top-bar-section
             ul.right
                 each entry in menu.navbar
-                    li(class=entry.slug === path ? 'active' : '')
+                    li(class=entry.page === page ? 'active' : '')
                         a(href=entry.slug) #{entry.name}

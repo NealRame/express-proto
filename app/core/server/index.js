@@ -44,6 +44,7 @@ exports.instance = function() {
             next();
         });
 
+        app.locals.applications = {};
         app.locals.menu = {
             navbar: [],
             footer: []
@@ -53,10 +54,21 @@ exports.instance = function() {
             var page = require(path.join('pages', page_config.name));
 
             app.get(page_config.route, page.get);
+            var page_name = page_config.name;
+            var page_app = page_config.app;
+            var page = require(path.join('pages', page_name));
+            app.get(page_config.route, function(req, res, next) {
+                res.locals.page = page_name;
+                page.get(req, res, next);
+            });
             app.locals.menu[page_config.menu.type].push({
                 name: page_config.menu.entry,
-                slug: page_config.route
+                page: page_name,
+                slug: page_config.route,
             });
+            app.locals.applications[page_name] = page_app
+                ? path.join('pages', page_name, page_app)
+                : false;
         });
 
         // catch 404 and forward to error handler
