@@ -50,7 +50,7 @@ exports.instance = function() {
             var page_name = page_config.name;
             var page_app = page_config.app;
             var page_css = page_config.css;
-            var page = require(path.join('pages', page_name));
+            var page = require(path.join('core/server/pages', page_name));
 
             app.get(page_config.route, function(req, res, next) {
                 res.locals.page = page_name;
@@ -64,7 +64,7 @@ exports.instance = function() {
             app.locals.applications[page_name] = page_app
                 ? path.join('pages', page_name, page_app)
                 : false;
-            app.locals.stylesheets[page_name]
+            app.locals.stylesheets[page_name] = page_css
                 ? path.join('/css', page_name, page_css)
                 : false;
         });
