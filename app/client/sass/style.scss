@@ -4,6 +4,42 @@
 @import "foundation/components/top-bar";
 @import "foundation/components/type";
 
+section.wrapper {
+    background-color: inherit;
+    position: relative;
+    z-index: 2;
+    -webkit-transform: translate3d(0,0,0);
+    & > article {
+        margin: 32px;
+        @media #{$large-up} {
+            margin: 32px auto;
+            width: #{upper-bound($medium-range)};
+        }
+        & > header {
+            margin: 16px 0;
+            h1 {
+                color: #444;
+                font-size: xx-large;
+                font-style: italic;
+                font-weight: bold;
+            }
+        }
+        & > section {
+            margin: 0 32px;
+        }
+    }
+    &.filled {
+        background-color: #333;
+        color: #666;
+        z-index: 2;
+        & > article > header > h1{
+            color: #333;
+        }
+    }
+    overflow: auto;
+}
+
+
 footer {
     background-color: #333;
     color: white;
