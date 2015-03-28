@@ -14,7 +14,7 @@ exports.instance = function() {
         return Promise.resolve(app);
     }
 
-    var config = require('core/server/config');
+    var config = require('server/config');
 
     return (new Promise(function(resolve, reject) {
         mongoose.connect(config.database.fullURI).connection
@@ -37,7 +37,7 @@ exports.instance = function() {
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(cookieParser());
 
-        app.use(express.static(path.join(__dirname, '..', '..', '..', 'public')));
+        app.use(express.static(path.join(__dirname, '..', '..', 'public')));
 
         app.locals.applications = {};
         app.locals.stylesheets = {};
@@ -50,7 +50,7 @@ exports.instance = function() {
             var page_name = page_config.name;
             var page_app = page_config.app;
             var page_css = page_config.css;
-            var page = require(path.join('core/server/pages', page_name));
+            var page = require(path.join('server/pages', page_name));
 
             app.get(page_config.route, function(req, res, next) {
                 res.locals.page = page_name;

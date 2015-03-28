@@ -19,7 +19,7 @@ var format = require('util').format;
 var fs = require('fs');
 var path = require('path');
 
-var config_dir = path.join(__dirname, '..', '..', '..', 'config');
+var config_dir = path.join(__dirname, '..', '..', 'config');
 var config = {
     env: process.env.NODE_ENV || 'development'
 };

@@ -24,49 +24,49 @@
   },
   "exportsOverride": {
     "backbone": {
-      "app/core/client/js/libs": "backbone.js"
+      "app/client/js/libs": "backbone.js"
     },
     "backbone.babysitter": {
-      "app/core/client/js/libs": "lib/backbone.babysitter.js"
+      "app/client/js/libs": "lib/backbone.babysitter.js"
     },
     "backbone.wreqr": {
-      "app/core/client/js/libs": "lib/backbone.wreqr.js"
+      "app/client/js/libs": "lib/backbone.wreqr.js"
     },
     "bluebird": {
-      "app/core/client/js/libs": "js/browser/bluebird.js"
+      "app/client/js/libs": "js/browser/bluebird.js"
     },
     "fastclick": {
-      "app/core/client/js/libs": "lib/fastclick.js"
+      "app/client/js/libs": "lib/fastclick.js"
     },
     "foundation": {
-      "app/core/client/sass/libs/foundation": "scss/*.scss",
-      "app/core/client/sass/libs/foundation/foundation": "scss/foundation/*.scss",
-      "app/core/client/sass/libs/foundation/foundation/components": "scss/foundation/components/*.scss",
-      "app/core/client/js/libs": "js/foundation.js"
+      "app/client/sass/libs/foundation": "scss/*.scss",
+      "app/client/sass/libs/foundation/foundation": "scss/foundation/*.scss",
+      "app/client/sass/libs/foundation/foundation/components": "scss/foundation/components/*.scss",
+      "app/client/js/libs": "js/foundation.js"
     },
     "jquery": {
-      "app/core/client/js/libs": "dist/jquery.js"
+      "app/client/js/libs": "dist/jquery.js"
     },
     "jquery.cookie": {
-      "app/core/client/js/libs": "jquery.cookie.js"
+      "app/client/js/libs": "jquery.cookie.js"
     },
     "jquery-placeholder": {
-      "app/core/client/js/libs": "jquery.placeholder.js"
+      "app/client/js/libs": "jquery.placeholder.js"
     },
     "marionette": {
-      "app/core/client/js/libs": "lib/backbone.marionette.js"
+      "app/client/js/libs": "lib/backbone.marionette.js"
     },
     "modernizr": {
-      "app/core/client/js/libs": "modernizr.js"
+      "app/client/js/libs": "modernizr.js"
     },
     "requirejs": {
-      "app/core/client/js/libs": "require.js"
+      "app/client/js/libs": "require.js"
     },
     "requirejs-text": {
-      "app/core/client/js/libs": "text.js"
+      "app/client/js/libs": "text.js"
     },
     "underscore": {
-      "app/core/client/js/libs": "underscore.js"
+      "app/client/js/libs": "underscore.js"
     }
   },
   "resolutions": {

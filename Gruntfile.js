@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         fonts_dir: '<%= assets_dir %>/fonts',
 
         // client app directory
-        client_app_dir: 'app/core/client',
+        client_app_dir: 'app/client',
 
         // javascript variables
         js_srcs_dir:  '<%= client_app_dir %>/js',
@@ -144,5 +144,5 @@ module.exports = function(grunt) {
     ///////////////////////////////////////////////////////////////////////
     // Register macro task(s).
 
-    grunt.registerTask('default', ['clean', 'bower', 'sass']);
+    grunt.registerTask('default', ['clean', 'bower', 'sass', 'requirejs']);
 };
